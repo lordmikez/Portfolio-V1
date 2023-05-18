@@ -1,0 +1,239 @@
+body{
+padding: 0;
+margin: 0;
+font-family: 'Roboto Mono', monospace;
+}
+nav{
+position: fixed;
+width: 100vw;
+text-align: center;
+padding-top: 2.5%;
+padding-bottom: 2.5%;
+background-color: black;
+z-index: 999;
+}
+nav a{
+text-decoration: none;
+color: #00FF00;
+}
+#welcome-section{
+width: 100vw;
+height: 100vh;
+background-color: black;
+}
+.content {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+height: 15%;
+overflow:hidden;
+font-size: 35px;
+line-height: 45px;
+color: #00FF00;
+padding: auto auto;
+}
+.content-container {
+font-weight: 600;
+overflow: hidden;
+height: 40px;
+padding: 0 30px;
+}
+.content-container:before {
+content: '[';
+position: absolute;
+left: 0;
+color: #00FF00;
+font-size: 42px;
+line-height: 40px;
+animation-name: opacity;
+animation-duration: 2s;
+animation-iteration-count: infinite;
+}
+.content-container:after {
+content: ']';
+position: absolute;
+top: 0;
+right: 0;
+color:#00FF00;
+font-size: 42px;
+line-height: 40px;
+animation-name: opacity;
+animation-duration: 2s;
+animation-iteration-count: infinite;
+}
+.content-container-text {
+display: inline;
+float: left;
+margin: 0;
+}
+.content-container-list {
+margin-top: 0;
+padding-left: 120px;
+text-align: left;
+list-style: none;
+animation-name: change;
+animation-duration: 10s;
+animation-iteration-count: infinite;
+}
+.content-container-list-item {
+line-height:45px;
+margin:0;
+}
+@keyframes opacity {
+0%, 100% {opacity:0;}
+50% {opacity:1;}
+}
+@keyframes change {
+0%, 12.66%, 100% {transform:translate3d(0,0,0);}
+16.66%, 29.32% {transform:translate3d(0,-25%,0);}
+33.32%,45.98% {transform:translate3d(0,-50%,0);}
+49.98%,62.64% {transform:translate3d(0,-75%,0);}
+66.64%,79.3% {transform:translate3d(0,-50%,0);}
+83.3%,95.96% {transform:translate3d(0,-25%,0);}
+}
+#welcome-section a{
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  width: 46px;
+  height: 46px;
+}
+#welcome-section a p {
+  position: absolute;
+  bottom: 9vh;
+  margin-left: -80%;
+  color: #00FF00;
+}
+#welcome-section a span {
+  position: absolute;
+  bottom: 2vh;
+  width: 46px;
+  height: 46px;
+  border: 1px solid #00FF00;
+  border-radius: 100%;
+  box-sizing: border-box;
+  margin-left: -23px;
+}
+#welcome-section a span::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  content: '';
+  width: 16px;
+  height: 16px;
+  margin: -12px 0 0 -8px;
+  border-left: 1px solid #00FF00;
+  border-bottom: 1px solid #00FF00;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  box-sizing: border-box;
+}
+@keyframes project-button {
+50% {opacity:0;}
+0%, 100% {opacity:1;}
+}
+#welcome-section a span:hover {
+animation-name: project-button;
+animation-duration: 2s;
+animation-iteration-count: infinite;
+animation-timing-function: ease;
+}
+.projects{
+width: 100vw;
+height: 100vh;
+display: flex;
+flex-wrap: wrap;
+}
+.project-tile{
+position: relative;
+width: 25%;
+height: 100%;
+}
+.project-tile img{
+display: block;
+width: 100%;
+height: 100%;
+object-fit:cover;
+}
+.project-tile .overlay {
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+background-color: black;
+overflow: hidden;
+width: 100%;
+height: 0%;
+transition:1s ease;
+opacity:0%;
+}
+.project-tile:hover .overlay{
+height:100%;
+opacity:100%;
+}
+.overlay #profile-link{
+color: #00FF00;
+font-size: 1rem;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+text-align: center;
+border: solid #00FF00 .1rem;
+padding: .5rem;
+}
+
+@media screen and (max-width: 600px){
+  .content {
+font-size: 30px;
+line-height: 45px;
+}
+.project-tile{
+position: relative;
+width: 50%;
+height: 50%;
+}
+.project-tile .overlay {
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+background-color: rgba(0, 0, 0, 0.8);
+overflow: hidden;
+width: 100%;
+height: 100%;
+opacity:100%;
+}
+nav{
+position: fixed;
+width: 100vw;
+text-align: center;
+padding-top: 5%;
+padding-bottom: 5%;
+background-color: black;
+z-index: 999;
+}
+nav a{
+text-decoration: none;
+color: #00FF00;
+font-size: 20px;
+}
+.content-container-list {
+padding-left: 100px;
+}
+}
+footer{
+  background-color: black;
+  color: #00FF00;
+  padding: 1% 1%;
+}
+footer input{
+  background-color: black;
+  border: solid 1px #00FF00;
+  color: #00FF00;
+  margin: 2% 0 0 0;
+}
+footer form, footer p{
+ text-align: center;
+}
